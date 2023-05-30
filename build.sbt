@@ -47,9 +47,7 @@ val Deps = new {
 
 inThisBuild(
   Seq(
-    scalaVersion := "2.13.10",
-//    scalaVersion       := "3.2.2", // uncomment to use Scala 3 with IDE
-    crossScalaVersions := Seq("3.2.2", "2.13.10"),
+    scalaVersion := "3.2.2",
     version            := "1.0.0",
     organization       := "io.7mind",
   )
@@ -58,10 +56,8 @@ inThisBuild(
 // that's just for quick experiments with distage snapshots
 ThisBuild / resolvers ++= Resolver.sonatypeOssRepos("snapshots")
 
-lazy val leaderboard = project
-  .in(file("."))
+lazy val `twenty-one` = (project in file("."))
   .settings(
-    name := "leaderboard",
     libraryDependencies ++= Seq(
       Deps.distageCore,
       Deps.distageRoles,
